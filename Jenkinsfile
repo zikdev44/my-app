@@ -1,3 +1,14 @@
+// step 1
+node {
+  stage ('SCM Checkout'){
+    git 'https://github.com/zikdev44/my-app'
+  }
+  stage('compile-package'){
+    sh 'clean package -Dmaven.test.skip'
+  }
+}
+
+/*
 @Library("mylibs") _
 pipeline {
   agent any
@@ -17,3 +28,4 @@ pipeline {
     }
   }
 }
+*/
